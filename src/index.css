@@ -1,0 +1,286 @@
+/* ============================================================
+   Google Font: Inter (tipografía moderna premium)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* ============================================================
+   CSS Custom Properties — Design Tokens
+   ============================================================ */
+:root {
+  --color-primary: #1e3a5f;
+  --color-primary-light: #2d5a8e;
+  --color-primary-dark: #162d4a;
+  --color-accent: #4aaaf0;
+  --color-accent-glow: rgba(74, 170, 240, 0.25);
+  --color-surface: #ffffff;
+  --color-surface-glass: rgba(255, 255, 255, 0.82);
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #5a6478;
+  --color-text-muted: #6b7a8d;
+  --color-text-tertiary: #8892a4;
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-shadow: rgba(30, 58, 95, 0.12);
+  /* Colores semánticos */
+  --color-success: #22c55e;
+  --color-success-dark: #16a34a;
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+  --color-warning: #f59e0b;
+  --color-warning-dark: #d97706;
+  --color-info: #3b82f6;
+  /* Radios */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  /* Sombras */
+  --shadow-soft: 0 2px 12px var(--color-shadow);
+  --shadow-elevated: 0 8px 32px rgba(30, 58, 95, 0.18);
+  --shadow-float: 0 12px 40px rgba(30, 58, 95, 0.22);
+  /* Transiciones */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Tamaño táctil mínimo (WCAG 2.5.5 / WCAG 2.5.8) */
+  --touch-target-min: 44px;
+  --touch-target-comfort: 48px;
+}
+
+/* Reset y estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  color: var(--color-text-primary);
+}
+
+/* ============================================================
+   Leaflet overrides para integración con el layout de la app
+   ============================================================ */
+
+/* El contenedor del mapa debe ocupar todo el espacio disponible */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  z-index: 0;
+}
+
+/* Ocultar el control de zoom por defecto (usaremos controles personalizados) */
+.leaflet-control-zoom {
+  display: none;
+}
+
+/* Estilo del attribution para que no tape la barra inferior */
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  bottom: 68px !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Asegurar que los popups aparezcan por encima de todo */
+.leaflet-popup {
+  z-index: 1001;
+}
+
+/* Fix para tiles grises al cambiar de tamaño */
+.leaflet-tile-pane {
+  transition: none;
+}
+
+/* ============================================================
+   Clases utilitarias de glassmorphism
+   ============================================================ */
+
+.glass {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.glass-dark {
+  background: rgba(30, 58, 95, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* ============================================================
+   Sombras con tinte de color (premium look)
+   ============================================================ */
+
+.shadow-blue {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-blue-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+.shadow-blue-float {
+  box-shadow: var(--shadow-float);
+}
+
+/* ============================================================
+   Animaciones personalizadas
+   ============================================================ */
+
+/* Fade in para tooltips y banners */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Slide-up suave para sheets y cards */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Pulse suave para indicadores activos */
+@keyframes gentle-pulse {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+/* Shimmer para skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   Estilos de scrollbar modernos
+   ============================================================ */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(30, 58, 95, 0.15);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 58, 95, 0.3);
+}
+
+/* ============================================================
+   Tap highlight para dispositivos táctiles
+   ============================================================ */
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================================
+   Focus visible para accesibilidad con teclado (WCAG 2.4.7)
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Screen-reader-only utility (WCAG 1.3.1)
+   ============================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================================
+   Skip-link visible al enfocar con teclado (WCAG 2.4.1)
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}

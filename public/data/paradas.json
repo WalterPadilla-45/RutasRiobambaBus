@@ -1,0 +1,140 @@
+[
+  {
+    "id": "P001",
+    "name": "Terminal Norte",
+    "coordinates": [-78.6580, -1.6420],
+    "lines": ["L01"]
+  },
+  {
+    "id": "P002",
+    "name": "Parque Sucre",
+    "coordinates": [-78.6540, -1.6545],
+    "lines": ["L01", "L10"]
+  },
+  {
+    "id": "P003",
+    "name": "Centro Histórico",
+    "coordinates": [-78.6500, -1.6700],
+    "lines": ["L01", "L02", "L03", "L04", "L06", "L07", "L08", "L09", "L11", "L14", "L15"]
+  },
+  {
+    "id": "P004",
+    "name": "Terminal Sur",
+    "coordinates": [-78.6420, -1.6980],
+    "lines": ["L02"]
+  },
+  {
+    "id": "P005",
+    "name": "Mercado La Condamine",
+    "coordinates": [-78.6495, -1.6720],
+    "lines": ["L02", "L07", "L12"]
+  },
+  {
+    "id": "P006",
+    "name": "Terminal Oriente",
+    "coordinates": [-78.6250, -1.6650],
+    "lines": ["L03"]
+  },
+  {
+    "id": "P007",
+    "name": "Estadio Olímpico",
+    "coordinates": [-78.6450, -1.6690],
+    "lines": ["L03", "L04", "L09"]
+  },
+  {
+    "id": "P008",
+    "name": "Terminal Occidente",
+    "coordinates": [-78.6750, -1.6720],
+    "lines": ["L04", "L15"]
+  },
+  {
+    "id": "P009",
+    "name": "Unibanco / ESPOCH",
+    "coordinates": [-78.6430, -1.6830],
+    "lines": ["L05", "L13"]
+  },
+  {
+    "id": "P010",
+    "name": "La Dolorosa",
+    "coordinates": [-78.6640, -1.6580],
+    "lines": ["L06"]
+  },
+  {
+    "id": "P011",
+    "name": "Bellavista",
+    "coordinates": [-78.6480, -1.6540],
+    "lines": ["L07", "L12"]
+  },
+  {
+    "id": "P012",
+    "name": "Licán",
+    "coordinates": [-78.6680, -1.6820],
+    "lines": ["L08"]
+  },
+  {
+    "id": "P013",
+    "name": "Quimiag",
+    "coordinates": [-78.6200, -1.6750],
+    "lines": ["L09"]
+  },
+  {
+    "id": "P014",
+    "name": "San Luis",
+    "coordinates": [-78.6560, -1.6480],
+    "lines": ["L10", "L17"]
+  },
+  {
+    "id": "P015",
+    "name": "San Francisco",
+    "coordinates": [-78.6350, -1.6580],
+    "lines": ["L11"]
+  },
+  {
+    "id": "P016",
+    "name": "Yaruquíes",
+    "coordinates": [-78.6380, -1.6450],
+    "lines": ["L12"]
+  },
+  {
+    "id": "P017",
+    "name": "Flores",
+    "coordinates": [-78.6600, -1.6900],
+    "lines": ["L13"]
+  },
+  {
+    "id": "P018",
+    "name": "Guaslán",
+    "coordinates": [-78.6720, -1.6650],
+    "lines": ["L14", "L15"]
+  },
+  {
+    "id": "P019",
+    "name": "Calpi",
+    "coordinates": [-78.6820, -1.6700],
+    "lines": ["L15"]
+  },
+  {
+    "id": "P020",
+    "name": "Punín",
+    "coordinates": [-78.6300, -1.6900],
+    "lines": ["L16"]
+  },
+  {
+    "id": "P021",
+    "name": "Cubijíes",
+    "coordinates": [-78.6550, -1.6380],
+    "lines": ["L17"]
+  },
+  {
+    "id": "P022",
+    "name": "Parque 21 de Abril",
+    "coordinates": [-78.6500, -1.6750],
+    "lines": ["L01", "L02", "L03", "L05", "L06", "L07", "L08", "L09", "L10", "L14", "L15", "L17"]
+  },
+  {
+    "id": "P023",
+    "name": "Colegio Maldonado",
+    "coordinates": [-78.6525, -1.6660],
+    "lines": ["L01", "L06", "L07", "L10", "L12", "L17"]
+  }
+]
