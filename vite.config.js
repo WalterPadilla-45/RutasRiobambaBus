@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/RutasRiobambaBus/',
   plugins: [
     react(),
     tailwindcss(),
@@ -28,8 +29,8 @@ export default defineConfig({
         theme_color: '#1e3a5f',
         background_color: '#ffffff',
         display: 'standalone',
-        scope: '/',
-        start_url: '/',
+        scope: '/RutasRiobambaBus/',
+        start_url: '/RutasRiobambaBus/',
         orientation: 'portrait',
         lang: 'es',
         categories: ['navigation', 'travel', 'utilities'],
@@ -88,14 +89,14 @@ export default defineConfig({
             name: 'Buscar ruta',
             short_name: 'Buscar',
             description: '¿Qué bus tomo? Busca rutas entre dos puntos',
-            url: '/what-bus',
+            url: '/RutasRiobambaBus/#/what-bus',
             icons: [{ src: 'pwa-96x96.png', sizes: '96x96' }],
           },
           {
             name: 'Ver líneas',
             short_name: 'Líneas',
             description: 'Lista de todas las líneas de transporte',
-            url: '/lines',
+            url: '/RutasRiobambaBus/#/lines',
             icons: [{ src: 'pwa-96x96.png', sizes: '96x96' }],
           },
         ],

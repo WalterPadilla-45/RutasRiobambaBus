@@ -4,7 +4,7 @@
 // Layout raíz: Router + TopNavigationBar + contenido de pantalla
 // ============================================================
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import MapScreen from './presentation/screens/MapScreen'
 import LinesScreen from './presentation/screens/LinesScreen'
 import WhatBusScreen from './presentation/screens/WhatBusScreen'
@@ -35,9 +35,9 @@ function AppLayout() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppLayout />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
